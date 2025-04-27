@@ -2,6 +2,8 @@ from sqlalchemy.orm import Session
 from app.models.friend import Friend, FriendStatus
 from app.schemas.friend import FriendRequest
 from fastapi import HTTPException
+from app.models.user import User 
+
 
 def create_friend_request(db: Session, user_id: int, friend_id: int):
     if user_id == friend_id:

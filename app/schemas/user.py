@@ -24,3 +24,12 @@ class User(BaseModel):
 class Token(BaseModel):
     access_token: str
     token_type: str
+
+class UserResponse(BaseModel):
+    id: int
+    name: str
+    email: EmailStr
+    bio: Optional[str] = None
+
+    class Config:
+        from_attributes = True
